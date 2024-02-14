@@ -3,6 +3,7 @@
 
 ## About
 Allows users to create code snippets or scripts and set them private or public. The can also bookmark public snippets added by other users.
+
 The application is free to use atm.
 
 First, run the development server:
