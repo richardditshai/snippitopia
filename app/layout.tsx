@@ -3,6 +3,7 @@ import { Source_Code_Pro as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/nav/NavBar";
+import QueryProvider from "@/providers/tanstack-provider";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,10 +26,12 @@ export default function RootLayout({
           "dark font-sans antialiased",
           fontSans.variable
         )}>
-          <div className="flex flex-col h-screen">
-            <Navbar />
-            {children}
-          </div>
+          <QueryProvider>
+            <div className="flex flex-col h-screen">
+              <Navbar />
+              {children}
+            </div>
+          </QueryProvider>
         </body>
     </html>
   );

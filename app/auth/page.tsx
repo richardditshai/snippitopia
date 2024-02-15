@@ -19,11 +19,11 @@ show_message()`;
 
 export default function Page() {
   
-  const handleOAuthLogin = (provider: 'github' | 'google') => {
+  const handleOAuthLogin = async (provider: 'github' | 'google') => {
 
     const supabase = createBClient();
 
-    supabase.auth.signInWithOAuth({
+    await supabase.auth.signInWithOAuth({
       provider,
       options: {
         redirectTo: location.origin + '/auth/callback'
